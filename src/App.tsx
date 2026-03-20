@@ -89,7 +89,7 @@ export default function App() {
           <MusicPlayer />
           
           <div className="mt-4 p-4 bg-glitch-cyan/5 border border-glitch-cyan/20 text-[10px] leading-relaxed text-glitch-cyan/40 text-center uppercase tracking-widest">
-            WARNING: VISUAL_DISTORTION_DETECTED. PROCEED_WITH_CAUTION.
+            SYSTEM_STATUS: OPERATIONAL. ALL_PROCESSES_SYNCED.
           </div>
         </motion.div>
       </main>

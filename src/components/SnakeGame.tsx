@@ -20,7 +20,7 @@ export const SnakeGame: React.FC<{ onScoreChange: (score: number) => void }> = (
   const [gameOver, setGameOver] = useState(false);
   const [score, setScore] = useState(0);
   const [isPaused, setIsPaused] = useState(true);
-  const gameLoopRef = useRef<NodeJS.Timeout | null>(null);
+  const gameLoopRef = useRef<number | null>(null);
 
   const generateFood = useCallback((currentSnake: Point[]) => {
     let newFood: Point;
@@ -100,12 +100,12 @@ export const SnakeGame: React.FC<{ onScoreChange: (score: number) => void }> = (
 
   useEffect(() => {
     if (!isPaused && !gameOver) {
-      gameLoopRef.current = setInterval(moveSnake, 150);
+      gameLoopRef.current = window.setInterval(moveSnake, 150);
     } else {
-      if (gameLoopRef.current) clearInterval(gameLoopRef.current);
+      if (gameLoopRef.current) window.clearInterval(gameLoopRef.current);
     }
     return () => {
-      if (gameLoopRef.current) clearInterval(gameLoopRef.current);
+      if (gameLoopRef.current) window.clearInterval(gameLoopRef.current);
     };
   }, [isPaused, gameOver, moveSnake]);
 
@@ -147,23 +147,23 @@ export const SnakeGame: React.FC<{ onScoreChange: (score: number) => void }> = (
           <div className="absolute inset-0 bg-black/80 backdrop-blur-sm flex flex-col items-center justify-center z-30 border-2 border-glitch-magenta">
             {gameOver ? (
               <>
-                <h2 className="text-4xl font-bold text-glitch-magenta glitch-text mb-4 uppercase tracking-tighter">SYSTEM FAILURE</h2>
-                <p className="text-xl mb-6 text-glitch-cyan">DATA_RETRIEVED: {score}</p>
+                <h2 className="text-4xl font-bold text-glitch-magenta glitch-text mb-4 uppercase tracking-tighter">GAME OVER</h2>
+                <p className="text-xl mb-6 text-glitch-cyan">SCORE: {score}</p>
                 <button 
                   onClick={resetGame}
                   className="px-8 py-3 bg-glitch-cyan text-black font-bold border-2 border-glitch-magenta hover:bg-glitch-magenta hover:text-white transition-all uppercase tracking-widest"
                 >
-                  REBOOT_SEQUENCE
+                  RETRY_PROCESS
                 </button>
               </>
             ) : (
               <>
-                <h2 className="text-4xl font-bold text-glitch-cyan glitch-text mb-4 uppercase tracking-tighter">PROCESS_HALTED</h2>
+                <h2 className="text-4xl font-bold text-glitch-cyan glitch-text mb-4 uppercase tracking-tighter">PAUSED</h2>
                 <button 
                   onClick={() => setIsPaused(false)}
                   className="px-8 py-3 bg-glitch-magenta text-black font-bold border-2 border-glitch-cyan hover:bg-glitch-cyan hover:text-white transition-all uppercase tracking-widest"
                 >
-                  RESUME_EXECUTION
+                  RESUME_GAME
                 </button>
                 <p className="mt-4 text-xs text-glitch-cyan/60 italic uppercase tracking-widest">INPUT: [SPACE] TO TOGGLE</p>
               </>
