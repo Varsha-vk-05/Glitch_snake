@@ -1,20 +1,121 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+                                                                     🚀 AI Studio App
 
-# Run and deploy your AI Studio app
+A web application built using AI Studio that leverages the Gemini API to provide intelligent AI-powered functionality.
 
-This contains everything you need to run your app locally.
+🔗 Live Project (AI Studio):
+https://ai.studio/apps/5ca132c3-5425-4907-b27a-6150555eb540
 
-View your app in AI Studio: https://ai.studio/apps/5ca132c3-5425-4907-b27a-6150555eb540
+📌 Features
 
-## Run Locally
+🤖 AI-powered responses using Gemini API
 
-**Prerequisites:**  Node.js
+⚡ Fast and responsive UI
 
+🛠️ Easy local setup and deployment
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+🌐 Runs on modern web stack (Node.js based)
+
+🧰 Tech Stack
+
+Frontend: JavaScript / React (AI Studio default)
+
+Backend: Node.js
+
+API: Google Gemini API
+
+Package Manager: npm
+
+⚙️ Getting Started
+
+Follow these steps to run the project locally.
+
+✅ Prerequisites
+
+Make sure you have the following installed:
+
+Node.js (v18 or higher)
+
+npm (comes with Node.js)
+
+Check installation:
+
+node -v
+npm -v
+📥 Installation
+
+Clone or download the project:
+
+git clone <your-repo-link>
+cd <project-folder>
+
+Install dependencies:
+
+npm install
+🔑 Environment Setup
+
+Create a file named:
+
+.env.local
+
+Add your Gemini API key:
+
+GEMINI_API_KEY=your_api_key_here
+
+👉 Get your API key from Google AI Studio
+
+▶️ Running the App
+
+Start the development server:
+
+npm run dev
+🌐 Access the App
+
+Open your browser and go to:
+
+https://glitch-snake-terminal-v-01-1031971482292.us-west1.run.app/
+
+🚀 Deployment
+
+You can deploy this app using platforms like:
+
+Vercel
+
+Netlify
+
+Render
+
+#Screenshot:
+<img width="1910" height="895" alt="Screenshot 2026-03-20 130525" src="https://github.com/user-attachments/assets/e8bd03a4-ef13-4c3e-8888-f750a5ee8f4d" />
+
+Important:
+
+Add GEMINI_API_KEY in environment variables of your hosting platform
+
+Do NOT expose .env.local publicly
+
+⚠️ Troubleshooting
+Issue	Solution
+npm not recognized	Install Node.js properly
+API not working	Check .env.local and API key
+Port already in use	Run with different port
+Dependencies error	Delete node_modules and run npm install again
+📁 Project Structure (Example)
+project-root/
+│
+├── public/
+├── src/
+├── .env.local
+├── package.json
+└── README.md
+🤝 Contributing
+
+Contributions are welcome! Feel free to fork the repo and submit a pull request.
+
+📄 License
+
+This project is for educational and development purposes.
+
+👩‍💻 Author
+
+Varsha S
+Aspiring Web Developer 🚀
